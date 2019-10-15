@@ -1,4 +1,5 @@
 const express = require("express");
+const logger = require("morgan");
 const app = express();
 const mongoose = require("mongoose");
 const routes = require("./routes/index.js");
@@ -9,6 +10,8 @@ const PORT = process.env.PORT || 3001;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+//logger
+app.use(logger("dev"));
 // Add routes, both API and view
 app.use(routes);
 
