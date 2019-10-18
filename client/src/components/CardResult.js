@@ -39,7 +39,7 @@ function CardResult({ books, filterSearch, book }) {
             </div>
             <div className="row">
               <div className="col-sm-4 col-md-3 col-lg-2">
-                <img className="img-responsive" src={book.image} alt="..." />
+                <img className="img-fluid" src={book.image} alt="..." />
               </div>
               <div
                 className="col-sm-8 col-md-9 col-lg-10"

@@ -1,11 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
+import images from "../../Image.js";
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Link className="navbar-brand" to="/">
-        Google Books
+        <img
+          id={images[0].id}
+          src={images[0].img}
+          width="30"
+          height="30"
+          alt={images[0].name}
+        />
       </Link>
 
       <button
@@ -13,7 +20,7 @@ function Navbar() {
         data-toggle="collapse"
         data-target="#collapse_target"
       >
-        <span class="navbar-toggler-icon"></span>
+        <span className="navbar-toggler-icon"></span>
       </button>
 
       <div className="collapse navbar-collapse" id="collapse_target">
