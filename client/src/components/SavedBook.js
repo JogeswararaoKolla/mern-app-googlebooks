@@ -1,17 +1,14 @@
 import React from "react";
 import API from "../utils/API.js";
-function CardResult({ books, filterSearch, book }) {
+function SavedBook({ books, book, filterSearch }) {
   const handleClick = e => {
     e.preventDefault();
-    const bookid = e.target.id;
-    API.saveBook(books.filter(book => book.id === bookid)[0])
-      .then(res => {
-        console.log(res);
-        filterSearch(bookid);
-      })
-      .catch(err => console.log(err));
+    const id = e.target.id;
+    API.deleteBook(id).then(result => {
+      console.log(result);
+      filterSearch(id);
+    });
   };
-
   return (
     <div className="row">
       <div className="col-md-12">
@@ -21,11 +18,11 @@ function CardResult({ books, filterSearch, book }) {
               <h5 className="d-inline">{book.title}</h5>
               <button
                 type="button"
-                id={book.id}
+                id={book._id}
                 className="btn btn-primary btn-sm mr-2 float-right"
                 onClick={handleClick}
               >
-                save
+                delete
               </button>
               <a
                 className="btn btn-primary btn-sm mr-2 float-right"
@@ -55,4 +52,4 @@ function CardResult({ books, filterSearch, book }) {
   );
 }
 
-export default CardResult;
+export default SavedBook;

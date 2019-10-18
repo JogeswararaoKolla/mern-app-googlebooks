@@ -7,7 +7,16 @@ function Navbar() {
       <Link className="navbar-brand" to="/">
         Google Books
       </Link>
-      <div>
+
+      <button
+        className="navbar-toggler"
+        data-toggle="collapse"
+        data-target="#collapse_target"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div className="collapse navbar-collapse" id="collapse_target">
         <ul className="navbar-nav">
           <li className="nav-item">
             <Link
