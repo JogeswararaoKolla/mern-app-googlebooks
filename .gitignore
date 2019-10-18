@@ -36,6 +36,10 @@ build/Release
 node_modules/
 jspm_packages/
 
+.DS_Store
+
+client/.DS_Store
+client/node_modules
 # TypeScript v1 declaration files
 typings/
 
